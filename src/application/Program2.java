@@ -30,6 +30,18 @@ public class Program2 {
 		departmentDao.insert(newDepartment);
 		System.out.println("Inserted! New id: " + newDepartment.getId());
 		
+		System.out.println("\n=== TEST 4: department update ===");
+		dep = departmentDao.findById(7);
+		dep.setName("Megatron 3000");
+		departmentDao.update(dep);
+		System.out.println(dep);
+		
+		System.out.println("\n=== TEST 5: department delete ===");
+		System.out.println("Enter id for delete teste");
+		int id = sc.nextInt();
+		departmentDao.deleteById(id);
+		System.out.println("Delete completed");
+		
 		sc.close();
 
 	}
